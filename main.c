@@ -1,7 +1,10 @@
 #include <stdio.h>
 #include "deque.h"
+#include "deque.c"
+#include "input.c"
 
 int main(void)
 {
-    printf("Hello!\n");
+    deque Deque;
+    input();
 }
