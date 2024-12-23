@@ -17,9 +17,9 @@ typedef struct deque
 extern deque_element *Deque_Elements; // Array of elements; Making array external
 extern int deque_size;
 
-void push_front(int value, deque *Deque, int size); // Inserts the element at the beginning.
-void push_back(int value, deque *Deque, int size);  // Adds element at the end.
-int empty(deque Deque);                             // Checks whether the deque is empty or not.
+void push_front(int value, deque *Deque, int size);
+void push_back(int value, deque *Deque, int size);
+int empty(deque Deque);
 void display(deque Deque, int size);
 deque_element *make_new_deque(int size);
 void deque_elements_init();

@@ -46,14 +46,11 @@ void heapSort(deque_element *Deque_for_heapsort, int size)
     double cpu_time_used;
 
     start = clock();
-    // performing heapify on the non leaf nodes so n/2 - 1
-    // to 0 are the non leaf nodes
+
     for (i = size / 2 - 1; i >= 0; i--)
     {
         heapify(Deque_for_heapsort, size, i);
     }
-
-    // the current array is changed to max heap
 
     for (i = size - 1; i > 0; i--)
     {
@@ -67,37 +64,28 @@ void heapSort(deque_element *Deque_for_heapsort, int size)
     display_sorted(Deque_for_heapsort, size, 0, cpu_time_used);
 }
 
-void heapify(deque_element *arr, int size, int i)
+void heapify(deque_element *Deque_for_heapSort, int size, int i)
 {
     int temp, maximum, left_index, right_index;
 
-    // currently assuming i postion to
-    // be holding the largest value
     maximum = i;
 
-    // right child index
     right_index = 2 * i + 2;
 
-    // left child index
     left_index = 2 * i + 1;
 
-    // if left index value is grater than the current index
-    // value
-    if (left_index < size && arr[left_index].data > arr[maximum].data)
+    if (left_index < size && Deque_for_heapSort[left_index].data > Deque_for_heapSort[maximum].data)
         maximum = left_index;
 
-    // if right index value is grater than the current index
-    // value
-    if (right_index < size && arr[right_index].data > arr[maximum].data)
+    if (right_index < size && Deque_for_heapSort[right_index].data > Deque_for_heapSort[maximum].data)
         maximum = right_index;
 
-    // checking if we needed swaping the elements or not
     if (maximum != i)
     {
-        temp = arr[i].data;
-        arr[i].data = arr[maximum].data;
-        arr[maximum].data = temp;
-        heapify(arr, size, maximum);
+        temp = Deque_for_heapSort[i].data;
+        Deque_for_heapSort[i].data = Deque_for_heapSort[maximum].data;
+        Deque_for_heapSort[maximum].data = temp;
+        heapify(Deque_for_heapSort, size, maximum);
     }
 }
 

@@ -135,7 +135,7 @@ void deque_elements_input(deque *Deque, char *filename)
     SetConsoleOutputCP(1251);
 
     char char_holder;
-    char buffer[8]; // length of the number
+    char buffer[12]; // length of the number
     FILE *sequence = fopen(filename, "r");
 
     if (sequence == NULL)
