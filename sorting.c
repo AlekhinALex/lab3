@@ -47,11 +47,13 @@ void heapSort(deque_element *Deque_for_heapsort, int size)
 
     start = clock();
 
+    // making max heap
     for (i = size / 2 - 1; i >= 0; i--)
     {
         heapify(Deque_for_heapsort, size, i);
     }
 
+    // max heaping without MAX elemnt
     for (i = size - 1; i > 0; i--)
     {
         temp = Deque_for_heapsort[0].data;
