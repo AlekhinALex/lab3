@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <Windows.h>
+
 
 #define SPACE '\x20'
 
@@ -47,7 +47,7 @@ void push_front(int value, deque *Deque, int size)
     }
     else if (Deque->start == 0)
     {
-        Deque->start = size - 1; // wrap around
+        Deque->start = size - 1;
     }
     else
     {
@@ -79,16 +79,16 @@ void display(deque Deque, int size)
 
     if (empty(Deque))
     {
-        printf("Дек пустой.\n");
+        printf("пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ.\n");
         return;
     }
     if (size > 103)
     {
-        printf("Слишком много переменных.\n");
+        printf("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.\n");
         return;
     }
 
-    printf("Элементы Дека: ");
+    printf("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ: ");
     int i = Deque.start;
     while (1)
     {
@@ -140,7 +140,7 @@ void deque_elements_input(deque *Deque, char *filename)
 
     if (sequence == NULL)
     {
-        perror("Не возможно открыть файл");
+        perror("пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ");
         exit(1);
     }
     while (1)
@@ -191,17 +191,17 @@ void write_deque(deque Deque, int size, char *filename)
 {
     if (empty(Deque))
     {
-        printf("Дек пустой.\n");
+        printf("пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ.\n");
         return;
     }
 
     FILE *fout;
 
-    fout = fopen("result/исходный_ряд.txt", "w");
+    fout = fopen("result/пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ_пїЅпїЅпїЅ.txt", "w");
 
     if (fout == NULL)
     {
-        perror("Не возможно открыть файл записи");
+        perror("пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ");
         exit(1);
     }
 
