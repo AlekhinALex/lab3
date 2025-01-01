@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <locale.h>
 
 
 #define SPACE '\x20'
@@ -74,8 +75,6 @@ int empty(deque Deque)
 
 void display(deque Deque, int size)
 {
-    SetConsoleCP(1251);
-    SetConsoleOutputCP(1251);
 
     if (empty(Deque))
     {
@@ -131,8 +130,7 @@ void deque_elements_resize(int deque_size)
 
 void deque_elements_input(deque *Deque, char *filename)
 {
-    SetConsoleCP(1251);
-    SetConsoleOutputCP(1251);
+    setlocale(LC_ALL, "Russian");
 
     char char_holder;
     char buffer[12]; // length of the number

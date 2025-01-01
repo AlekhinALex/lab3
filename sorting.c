@@ -1,7 +1,8 @@
 #include "sorting.h"
 #include "deque.h"
 #include <time.h>
-#include <Windows.h>
+#include <stdlib.h>
+#include <locale.h>
 #include <stdio.h>
 
 void swap(deque_element *first_deque, deque_element *second_deque)
@@ -93,8 +94,7 @@ void heapify(deque_element *Deque_for_heapSort, int size, int i)
 
 void display_sorted(deque_element *Displayed_deque, int size, int type, float time)
 {
-    SetConsoleCP(1251);
-    SetConsoleOutputCP(1251);
+    setlocale(LC_ALL, "Russian");
 
     if (type)
         printf("BubbleSorted ");
@@ -102,23 +102,23 @@ void display_sorted(deque_element *Displayed_deque, int size, int type, float ti
         printf("HeapSorted ");
     printf("deque: ");
     if (size > 103)
-        printf(" Слишком много переменных; ");
+        printf("   ; ");
     else
         for (int i = 0; i < size; ++i)
         {
             printf("%d ", Displayed_deque[i].data);
         }
-    printf("Время выполнения - %f секунд\n", time);
+    printf("  - %f \n", time);
 }
 
 void write_sorted(deque_element *Displayed_deque, int size)
 {
     FILE *fout;
-    fout = fopen("result/исходный_ряд_отсортированный_bubblesort.txt", "w");
+    fout = fopen("result/___bubblesort.txt", "w");
 
     if (fout == NULL)
     {
-        perror("Невозможно открыть файл для записи");
+        perror("    ");
         exit(1);
     }
 
